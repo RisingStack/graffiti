@@ -4,7 +4,36 @@ describe('graffiti express', function() {
 
   var express = require('./');
 
-  it('checks for required options');
+  describe('checks for required options', function() {
+
+    it('throws an error if not all met', function() {
+
+      try {
+        express({
+          prefix: '/graphql'
+        });
+      } catch (ex) {
+        expect(ex).to.be.ok;
+        return;
+      }
+
+      throw new Error('Error should have been thrown');
+
+    });
+
+    it('doesn\'t throw if all is passed', function() {
+
+      var mw = express({
+        prefix: '/graphql',
+        models: [],
+        adapter: {
+          getSchema: function() {}
+        }
+      });
+
+      expect(mw).to.be.ok;
+    });
+  });
 
   it('creates the schema');
 
