@@ -9,7 +9,7 @@ describe('graffiti util', function() {
     it('throws if first argument is undefined', function() {
 
       try {
-        util.checkDep()
+        util.checkDep();
       } catch (ex) {
         expect(ex.message).to.eql('Object cannot be undefined');
         return;
@@ -30,7 +30,7 @@ describe('graffiti util', function() {
       throw new Error('Error should have been thrown');
     });
 
-    it('returns the property', function () {
+    it('returns the property', function() {
 
       var prop = util.checkDep({
         colour: 'red'
