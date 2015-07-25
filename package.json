@@ -4,12 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "exit 0",
+    "test": "NODE_ENV=test mocha $(find src -name \"*.spec.js\")",
     "eslint": "eslint src"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RisingStack/graffiti.git"
+    "url": "git@github.com:RisingStack/graffiti.git"
   },
   "author": "",
   "license": "ISC",
@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/RisingStack/graffiti#readme",
   "devDependencies": {
+    "chai": "^3.2.0",
     "eslint": "1.0.0-rc-3",
+    "mocha": "^2.2.5",
     "pre-commit": "^1.0.10"
   },
   "pre-commit": [
