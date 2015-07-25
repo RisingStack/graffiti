@@ -18,7 +18,7 @@ var graffitiMongoose = require('@risingstack/graffiti-mongoose');
 var app = express();
 app.use(graffiti.express({
   prefix: '/graphql',
-  adapter: graffitiMongoose',
+  adapter: graffitiMongoose,
   models: []
 }));
 
@@ -66,7 +66,7 @@ var graffitiMongoose = require('@risingstack/graffiti-mongoose');
 var app = express();
 app.use(graffiti.koa({
   prefix: '/graphql',
-  adapter: graffitiMongoose',
+  adapter: graffitiMongoose,
   models: []
 }));
 
