@@ -38,7 +38,7 @@ server.connection({ port: 3000 });
 server.register({
   register: graffitiMongoose.hapi,
   options: {
-    adapter: graffitiMongoose',
+    adapter: graffitiMongoose,
     models: []
   }
 }, {
