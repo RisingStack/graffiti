@@ -35,7 +35,23 @@ describe('graffiti express', function() {
     });
   });
 
-  it('creates the schema');
+  it('creates the schema', function() {
+
+    var getSchemaSpy = this.sandbox.spy();
+    var models = [{
+      name: 'User'
+    }];
+
+    var mw = express({
+      prefix: '/graphql',
+      models: models,
+      adapter: {
+        getSchema: getSchemaSpy
+      }
+    });
+
+    expect(getSchemaSpy).to.be.calledWith(models);
+  });
 
   describe('requested url starts with prefix', function() {
 
