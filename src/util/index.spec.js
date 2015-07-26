@@ -4,6 +4,22 @@ describe('graffiti util', function() {
 
   var util = require('./');
 
+  describe('#isPrefixed', function() {
+
+    it('returns true for request paths starting with prefix');
+
+    it('returns false for request paths not starting with prefix');
+
+  });
+
+  describe('#isGet', function() {
+
+    it('returns true for GET');
+
+    it('returns false for not GETs');
+
+  });
+
   describe('#checkDep', function() {
 
     it('throws if first argument is undefined', function() {
