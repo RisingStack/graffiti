@@ -1,12 +1,6 @@
 var checkDep = require('../util').checkDep;
-
-function isGet(request) {
-  return request.method === 'GET';
-}
-
-function isPrefixed(request, prefix) {
-  return request.path.indexOf(prefix) === 0;
-}
+var isPrefixed = require('../util').isPrefixed;
+var isGet = require('../util').isGet;
 
 function create(options) {
 
