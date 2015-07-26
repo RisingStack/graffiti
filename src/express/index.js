@@ -1,4 +1,3 @@
-var config = require('../config');
 var checkDep = require('../util').checkDep;
 
 function isGet(request) {
