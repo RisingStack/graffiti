@@ -1,5 +1,4 @@
 var config = require('../config');
-var graphql = require('graphql').graphql;
 var checkDep = require('../util').checkDep;
 
 function isGet(request) {
@@ -10,30 +9,35 @@ function isPrefixed(request, prefix) {
   return request.path.indexOf(prefix) === 0;
 }
 
-function express(options) {
+function create(options) {
 
-  var models = checkDep(options, 'models');
-  var adapter = checkDep(options, 'adapter');
-  var prefix = checkDep(options, 'prefix');
+  var graphql = checkDep(options, 'graphql');
 
-  var schema = adapter.getSchema(models);
+  return function(options) {
 
-  return function(request, respone, next) {
+    var models = checkDep(options, 'models');
+    var adapter = checkDep(options, 'adapter');
+    var prefix = checkDep(options, 'prefix');
 
-    var query = request.query.q;
+    var schema = adapter.getSchema(models);
 
-    if (isGet(request) && isPrefixed(request, prefix)) {
-      return graphql(schema, query)
-        .then(function(result) {
-          respone.json(result);
-        })
-        .catch(function(err) {
-          next(err);
-        });
-    }
+    return function(request, respone, next) {
 
-    return next();
+      var query = request.query.q;
+
+      if (isGet(request) && isPrefixed(request, prefix)) {
+        return graphql(schema, query)
+          .then(function(result) {
+            respone.json(result);
+          })
+          .catch(function(err) {
+            next(err);
+          });
+      }
+
+      return next();
+    };
   };
 }
 
-module.exports = express;
+module.exports.create = create;

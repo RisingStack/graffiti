@@ -1,5 +1,8 @@
-function koa() {
+function create() {
 
+  return function koa() {
+
+  };
 }
 
-module.exports = koa;
+module.exports.create = create;

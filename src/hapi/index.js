@@ -1,5 +1,8 @@
-function hapi() {
+function create() {
 
+  return function hapi() {
+
+  };
 }
 
-module.exports = hapi;
+module.exports.create = create;

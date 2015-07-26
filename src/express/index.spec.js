@@ -8,8 +8,12 @@ describe('graffiti express', function() {
 
     it('throws an error if not all met', function() {
 
+      var mwFactory = express.create({
+        graphql: {}
+      });
+
       try {
-        express({
+        mwFactory({
           prefix: '/graphql'
         });
       } catch (ex) {
@@ -23,7 +27,11 @@ describe('graffiti express', function() {
 
     it('doesn\'t throw if all is passed', function() {
 
-      var mw = express({
+      var mwFactory = express.create({
+        graphql: {}
+      });
+
+      var mw = mwFactory({
         prefix: '/graphql',
         models: [],
         adapter: {
@@ -36,13 +44,15 @@ describe('graffiti express', function() {
   });
 
   it('creates the schema', function() {
-
+    var mwFactory = express.create({
+      graphql: {}
+    });
     var getSchemaSpy = this.sandbox.spy();
     var models = [{
       name: 'User'
     }];
 
-    var mw = express({
+    mwFactory({
       prefix: '/graphql',
       models: models,
       adapter: {
@@ -55,15 +65,77 @@ describe('graffiti express', function() {
 
   describe('requested url starts with prefix', function() {
 
-    it('returns with proper results');
+    it('returns with proper results', function() {
 
-    it('returns with an error');
+      var result = {
+        data: 1
+      };
+
+      var mwFactory = express.create({
+        graphql: function() {
+          return Promise.resolve(result);
+        }
+      });
+
+      var mw = mwFactory({
+        prefix: '/graphql',
+        models: [],
+        adapter: {
+          getSchema: function() {}
+        }
+      });
+
+      var request = {
+        method: 'GET',
+        path: '/graphql',
+        query: {
+          q: '{__type}'
+        }
+      };
+
+      var response = {
+        json: function(d) {
+          expect(d).to.eql(result);
+        }
+      };
+
+      mw(request, response);
+    });
 
   });
 
   describe('requested url does not start with prefix', function() {
 
-    it('calls the next middleware');
+    it('calls the next middleware', function() {
+
+      var mwFactory = express.create({
+        graphql: {}
+      });
+
+      var mw = mwFactory({
+        prefix: '/graphql',
+        models: [],
+        adapter: {
+          getSchema: function() {}
+        }
+      });
+
+      var request = {
+        method: 'GET',
+        path: '/not-good',
+        query: {
+          q: '{__type}'
+        }
+      };
+
+      var response = {};
+
+      var nextSpy = this.sandbox.spy();
+
+      mw(request, response, nextSpy);
+
+      expect(nextSpy.called).to.be.ok;
+    });
 
   });
 
