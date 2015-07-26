@@ -20,7 +20,7 @@ function create(options) {
 
       if (isGet(this) && isPrefixed(this, prefix)) {
         this.body = yield graphql(schema, query);
-        return;
+        return this.body;
       }
 
       yield next;
