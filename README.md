@@ -63,7 +63,7 @@ var koa = require('koa');
 var graffiti = require('@risingstack/graffiti');
 var graffitiMongoose = require('@risingstack/graffiti-mongoose');
 
-var app = express();
+var app = koa();
 app.use(graffiti.koa({
   prefix: '/graphql',
   adapter: graffitiMongoose,

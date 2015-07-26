@@ -15,6 +15,7 @@
     "describe": false,
     "it": false
   },
+  "parser": "babel-eslint",
   "rules": {
     "accessor-pairs": 2,
     "arrow-spacing": [2, { "before": true, "after": true }],

@@ -18,10 +18,12 @@
   },
   "homepage": "https://github.com/RisingStack/graffiti#readme",
   "devDependencies": {
+    "babel-eslint": "^4.0.0",
     "chai": "^3.2.0",
     "chai-subset": "^1.0.1",
     "eslint": "1.0.0-rc-3",
     "express": "^4.13.1",
+    "koa": "^0.21.0",
     "mocha": "^2.2.5",
     "pre-commit": "^1.0.10",
     "sinon": "^1.15.4",
