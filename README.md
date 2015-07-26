@@ -36,7 +36,7 @@ var server = new Hapi.Server();
 server.connection({ port: 3000 });
 
 server.register({
-  register: graffitiMongoose.hapi,
+  register: graffiti.hapi,
   options: {
     adapter: graffitiMongoose,
     models: []
