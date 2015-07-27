@@ -109,3 +109,10 @@ app.listen(3000);
 ```
 npm test
 ```
+## Roadmap
+
+* Query support *(done)*
+* Mutation support *(in progress)*
+* More adapters
+  * RethinkDB - Thinky *(in progress)*
+  * SQL - Bookshelf *(in progress)*
