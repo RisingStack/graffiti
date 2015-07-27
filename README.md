@@ -8,12 +8,12 @@ We don't want to rewrite our application - no one wants that.
 graffiti provides an [Express](http://expressjs.com) middleware, a [Hapi](http://hapijs.com) plugin and a
 [Koa](http://koajs.com) middleware to convert your existing models into a GraphQL schema and exposes it over HTTP.
 
-## Plugins
+## Adapters
 
 * [mongoose](https://github.com/RisingStack/graffiti-mongoose)
 * more coming soon...
 
-## Supported frameworks
+## Supported servers
 
 * [Express](https://github.com/RisingStack/graffiti#express)
 * [Hapi](https://github.com/RisingStack/graffiti#hapi)
