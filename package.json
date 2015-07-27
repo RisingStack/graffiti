@@ -1,7 +1,7 @@
 {
   "name": "@risingstack/graffiti",
   "version": "1.0.0",
-  "description": "",
+  "description": "Mongoose adapter for graffiti (Node.js GraphQL ORM)",
   "main": "index.js",
   "scripts": {
     "test": "NODE_ENV=test mocha --harmony --require co-mocha $(find src -name \"*.spec.js\")",
@@ -11,8 +11,16 @@
     "type": "git",
     "url": "git@github.com:RisingStack/graffiti.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "RisingStack",
+  "license": "MIT",
+  "keywords": [
+    "GraphQL",
+    "graffiti",
+    "express",
+    "hapi",
+    "koa",
+    "ORM"
+  ],
   "bugs": {
     "url": "https://github.com/RisingStack/graffiti/issues"
   },
