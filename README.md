@@ -1,5 +1,7 @@
 # ![graffiti](https://cloud.githubusercontent.com/assets/1764512/8900273/9ed758dc-343e-11e5-95ba-e82f876cf52d.png)
 
+[![Build Status](https://travis-ci.org/RisingStack/graffiti.svg)](https://travis-ci.org/RisingStack/graffiti)  
+
 Currently the consumption of HTTP REST APIs dominate the client-side world,
 [GraphQL](https://github.com/facebook/graphql) aims to change this.
 This transition can be time-consuming - this is where graffiti comes into the picture.
