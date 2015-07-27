@@ -1,0 +1,5 @@
+coverage
+.travis.yml
+example
+.idea
+*.spec.js
