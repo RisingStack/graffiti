@@ -16,7 +16,7 @@ GraphQL is a query language created by Facebook in 2012 which provides a common 
 
 The client asks for various data from the GraphQL server via queries. The response format is described in the query and defined by the client instead of the server: they are called client‐specified queries.
 
-For more info check out [RisingStack's article about GraphQL](https://blog.risingstack.com/graphql-overview-getting-started-with-graphql-and-nodejs/).
+For more info check out RisingStack's [GraphQL tutorial](https://blog.risingstack.com/graphql-overview-getting-started-with-graphql-and-nodejs/).
 
 ## Adapters
 
