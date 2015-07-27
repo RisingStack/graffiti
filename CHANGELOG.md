@@ -1,3 +1,18 @@
+<a name="1.0.1"></a>
+## 1.0.1 (2015-07-27)
+
+
+### chore
+
+* chore(npmignore): add .npmignore file
+ ([b1917b4](https://github.com/RisingStack/graffiti/commit/b1917b4))
+* chore(package): add keywords to package.json, fix license
+ ([5478001](https://github.com/RisingStack/graffiti/commit/5478001))
+* chore(package): bump version to 1.0.1
+ ([e5c0476](https://github.com/RisingStack/graffiti/commit/e5c0476))
+
+
+
 <a name="1.0.0"></a>
 # 1.0.0 (2015-07-27)
 
