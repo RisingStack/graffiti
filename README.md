@@ -1,5 +1,13 @@
 # graffiti
 
+Currently the consumption of HTTP REST APIs dominate the client-side world,
+GraphQL aims to change this.
+This transition can be time-consuming - this is where graffiti comes into the picture.
+
+We don't want to rewrite our application - no one wants that.
+graffiti provides an express middleware, a hapi plugin and a
+koa middleware to convert your existing models into a GraphQL schema and exposes it over HTTP.
+
 ## Install
 
 ```
