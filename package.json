@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "NODE_ENV=test mocha --require co-mocha $(find src -name \"*.spec.js\")",
+    "test": "NODE_ENV=test mocha --harmony --require co-mocha $(find src -name \"*.spec.js\")",
     "eslint": "eslint src"
   },
   "repository": {
