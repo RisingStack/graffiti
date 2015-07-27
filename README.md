@@ -10,6 +10,14 @@ We don't want to rewrite our application - no one wants that.
 graffiti provides an [Express](http://expressjs.com) middleware, a [Hapi](http://hapijs.com) plugin and a
 [Koa](http://koajs.com) middleware to convert your existing models into a GraphQL schema and exposes it over HTTP.
 
+## What is GraphQL?
+
+GraphQL is a query language created by Facebook in 2012 which provides a common interface between the client and the server for data fetching and manipulations.
+
+The client asks for various data from the GraphQL server via queries. The response format is described in the query and defined by the client instead of the server: they are called client‐specified queries.
+
+For more info check out [RisingStack's article about GraphQL](https://blog.risingstack.com/graphql-overview-getting-started-with-graphql-and-nodejs/).
+
 ## Adapters
 
 * [mongoose](https://github.com/RisingStack/graffiti-mongoose)
