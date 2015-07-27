@@ -1,17 +1,28 @@
 # graffiti
 
 Currently the consumption of HTTP REST APIs dominate the client-side world,
-GraphQL aims to change this.
+[GraphQL](https://github.com/facebook/graphql) aims to change this.
 This transition can be time-consuming - this is where graffiti comes into the picture.
 
 We don't want to rewrite our application - no one wants that.
-graffiti provides an express middleware, a hapi plugin and a
-koa middleware to convert your existing models into a GraphQL schema and exposes it over HTTP.
+graffiti provides an [Express](http://expressjs.com) middleware, a [Hapi](http://hapijs.com) plugin and a
+[Koa](http://koajs.com) middleware to convert your existing models into a GraphQL schema and exposes it over HTTP.
+
+## Plugins
+
+* [mongoose](https://github.com/RisingStack/graffiti-mongoose)
+* more coming soon...
+
+## Supported server frameworks
+
+* Express
+* Koa
+* Hapi
 
 ## Install
 
 ```
-npm i @risingstack/graffiti --save
+npm install @risingstack/graffiti --save
 ```
 
 ## Usage
@@ -22,12 +33,14 @@ npm i @risingstack/graffiti --save
 var express = require('express');
 var graffiti = require('@risingstack/graffiti');
 var graffitiMongoose = require('@risingstack/graffiti-mongoose');
+var User = require('./models/user');
+var Cat = require('./models/cat');
 
 var app = express();
 app.use(graffiti.express({
   prefix: '/graphql',
   adapter: graffitiMongoose,
-  models: []
+  models: [User, Cat]
 }));
 
 app.listen(3000);
@@ -79,4 +92,10 @@ app.use(graffiti.koa({
 }));
 
 app.listen(3000);
+```
+
+## Test
+
+```
+npm test
 ```
