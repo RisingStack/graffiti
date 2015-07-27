@@ -4,8 +4,14 @@
 
 ### chore
 
+* chore(changelog): add CHANGELOG file to project
+ ([1fa3fb7](https://github.com/RisingStack/graffiti/commit/1fa3fb7))
+* chore(ci): configure travis via file
+ ([8d930bd](https://github.com/RisingStack/graffiti/commit/8d930bd))
 * chore(contributing): add CONTRIBUTING file
  ([8b41f3e](https://github.com/RisingStack/graffiti/commit/8b41f3e))
+* chore(package): add --harmony flag to mocha to support Node.js v0.12
+ ([39338d6](https://github.com/RisingStack/graffiti/commit/39338d6))
 * chore(package): add package.json file
  ([eec7c31](https://github.com/RisingStack/graffiti/commit/eec7c31))
 * chore(project): add ESLint
@@ -17,14 +23,20 @@
 
 ### docs
 
+* docs(readkme): add "What is GraphQL?" section to README
+ ([553f1f6](https://github.com/RisingStack/graffiti/commit/553f1f6))
 * docs(readme): add Express and Hapi middleware examples to README
  ([c09de39](https://github.com/RisingStack/graffiti/commit/c09de39))
+* docs(readme): add TravisCI badge to README
+ ([59b9288](https://github.com/RisingStack/graffiti/commit/59b9288))
 * docs(readme): add graffiti overview to README
  ([ff74268](https://github.com/RisingStack/graffiti/commit/ff74268))
 * docs(readme): add logo to the README
  ([e8cefcd](https://github.com/RisingStack/graffiti/commit/e8cefcd)), closes [#1](https://github.com/RisingStack/graffiti/issues/1)
 * docs(readme): add plugins section to README
  ([b804dfa](https://github.com/RisingStack/graffiti/commit/b804dfa))
+* docs(readme): fix GraphQL tutorial anchor text
+ ([3c7e01a](https://github.com/RisingStack/graffiti/commit/3c7e01a))
 * docs(readme): fix Hapi related typo in README
  ([6bdb276](https://github.com/RisingStack/graffiti/commit/6bdb276))
 * docs(readme): fix typo in README
