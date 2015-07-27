@@ -13,11 +13,11 @@ graffiti provides an [Express](http://expressjs.com) middleware, a [Hapi](http:/
 * [mongoose](https://github.com/RisingStack/graffiti-mongoose)
 * more coming soon...
 
-## Supported server frameworks
+## Supported frameworks
 
-* Express
-* Koa
-* Hapi
+* [Express](https://github.com/RisingStack/graffiti#express)
+* [Hapi](https://github.com/RisingStack/graffiti#hapi)
+* [Koa](https://github.com/RisingStack/graffiti#koa)
 
 ## Install
 
