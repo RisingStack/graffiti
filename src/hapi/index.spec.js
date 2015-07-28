@@ -9,9 +9,7 @@ describe('graffiti hapi', function() {
 
     it('throws an error if not all met', function() {
 
-      var mwFactory = hapi.create({
-        graphql: {}
-      });
+      var mwFactory = hapi.create();
 
       try {
         mwFactory({
@@ -38,15 +36,14 @@ describe('graffiti hapi', function() {
     };
 
     server.register({
-      register: hapi.create({
-        graphql: function() {
-          return Promise.resolve(result);
-        }
-      }),
+      register: hapi.create(),
       options: {
         models: [],
         adapter: {
-          getSchema: function() {}
+          getSchema: function() {},
+          graphql: function() {
+            return Promise.resolve();
+          }
         }
       }
     }, {

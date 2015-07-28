@@ -25,6 +25,9 @@
     "url": "https://github.com/RisingStack/graffiti/issues"
   },
   "homepage": "https://github.com/RisingStack/graffiti#readme",
+  "dependencies": {
+    "boom": "^2.8.0"
+  },
   "devDependencies": {
     "babel-eslint": "^4.0.0",
     "chai": "^3.2.0",
@@ -42,9 +45,5 @@
   "pre-commit": [
     "eslint",
     "test"
-  ],
-  "dependencies": {
-    "boom": "^2.8.0",
-    "graphql": "^0.1.8"
-  }
+  ]
 }

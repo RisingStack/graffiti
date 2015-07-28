@@ -2,10 +2,7 @@ var checkDep = require('../util').checkDep;
 var isPrefixed = require('../util').isPrefixed;
 var isGet = require('../util').isGet;
 
-function create(options) {
-
-  var graphql = checkDep(options, 'graphql');
-
+function create() {
   return function koa(options) {
 
     var models = checkDep(options, 'models');
@@ -19,7 +16,7 @@ function create(options) {
       var query = this.query.q;
 
       if (isGet(this) && isPrefixed(this, prefix)) {
-        this.body = yield graphql(schema, query);
+        this.body = yield adapter.graphql(schema, query);
         return this.body;
       }
 

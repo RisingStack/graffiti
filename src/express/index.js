@@ -2,10 +2,7 @@ var checkDep = require('../util').checkDep;
 var isPrefixed = require('../util').isPrefixed;
 var isGet = require('../util').isGet;
 
-function create(options) {
-
-  var graphql = checkDep(options, 'graphql');
-
+function create() {
   return function(options) {
 
     var models = checkDep(options, 'models');
@@ -19,7 +16,7 @@ function create(options) {
       var query = request.query.q;
 
       if (isGet(request) && isPrefixed(request, prefix)) {
-        return graphql(schema, query)
+        return adapter.graphql(schema, query)
           .then(function(result) {
             respone.json(result);
           })

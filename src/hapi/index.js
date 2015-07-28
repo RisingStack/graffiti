@@ -1,10 +1,7 @@
 var checkDep = require('../util').checkDep;
 var boom = require('boom');
 
-function create(options) {
-
-  var graphql = checkDep(options, 'graphql');
-
+function create() {
   var plugin = {
     register: function(server, options, next) {
 
@@ -20,7 +17,7 @@ function create(options) {
 
           var query = request.query.q;
 
-          return graphql(schema, query)
+          return adapter.graphql(schema, query)
             .then(function(result) {
               reply(result);
             })

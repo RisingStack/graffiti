@@ -8,9 +8,7 @@ describe('graffiti koa', function() {
 
     it('throws an error if not all met', function() {
 
-      var mwFactory = koa.create({
-        graphql: {}
-      });
+      var mwFactory = koa.create();
 
       try {
         mwFactory({
@@ -28,9 +26,7 @@ describe('graffiti koa', function() {
   });
 
   it('creates the schema', function() {
-    var mwFactory = koa.create({
-      graphql: {}
-    });
+    var mwFactory = koa.create();
     var getSchemaSpy = this.sandbox.spy();
     var models = [{
       name: 'User'
@@ -55,17 +51,18 @@ describe('graffiti koa', function() {
         data: 1
       };
 
-      var mwFactory = koa.create({
-        graphql: function() {
-          return Promise.resolve(result);
-        }
-      });
+      var mwFactory = koa.create();
 
       var mw = mwFactory({
         prefix: '/graphql',
         models: [],
         adapter: {
-          getSchema: function() {}
+          getSchema: function() {},
+          graphql: function() {
+            return Promise.resolve({
+              data: 1
+            });
+          }
         }
       });
 
@@ -88,9 +85,7 @@ describe('graffiti koa', function() {
 
     it('calls the next middleware', function *(done) {
 
-      var mwFactory = koa.create({
-        graphql: {}
-      });
+      var mwFactory = koa.create();
 
       var mw = mwFactory({
         prefix: '/graphql',

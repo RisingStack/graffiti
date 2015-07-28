@@ -8,9 +8,7 @@ describe('graffiti express', function() {
 
     it('throws an error if not all met', function() {
 
-      var mwFactory = express.create({
-        graphql: {}
-      });
+      var mwFactory = express.create();
 
       try {
         mwFactory({
@@ -27,9 +25,7 @@ describe('graffiti express', function() {
 
     it('doesn\'t throw if all is passed', function() {
 
-      var mwFactory = express.create({
-        graphql: {}
-      });
+      var mwFactory = express.create();
 
       var mw = mwFactory({
         prefix: '/graphql',
@@ -44,9 +40,7 @@ describe('graffiti express', function() {
   });
 
   it('creates the schema', function() {
-    var mwFactory = express.create({
-      graphql: {}
-    });
+    var mwFactory = express.create();
     var getSchemaSpy = this.sandbox.spy();
     var models = [{
       name: 'User'
@@ -71,17 +65,16 @@ describe('graffiti express', function() {
         data: 1
       };
 
-      var mwFactory = express.create({
-        graphql: function() {
-          return Promise.resolve(result);
-        }
-      });
+      var mwFactory = express.create();
 
       var mw = mwFactory({
         prefix: '/graphql',
         models: [],
         adapter: {
-          getSchema: function() {}
+          getSchema: function() {},
+          graphql: function() {
+            return Promise.resolve();
+          }
         }
       });
 
@@ -108,15 +101,16 @@ describe('graffiti express', function() {
 
     it('calls the next middleware', function() {
 
-      var mwFactory = express.create({
-        graphql: {}
-      });
+      var mwFactory = express.create();
 
       var mw = mwFactory({
         prefix: '/graphql',
         models: [],
         adapter: {
-          getSchema: function() {}
+          getSchema: function() {},
+          graphql: function() {
+            return Promise.resolve();
+          }
         }
       });
 
