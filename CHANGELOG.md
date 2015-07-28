@@ -1,3 +1,24 @@
+<a name="1.0.2"></a>
+## 1.0.2 (2015-07-28)
+
+
+### chore
+
+* chore(package): bump version to 1.0.2
+ ([7c6aef2](https://github.com/RisingStack/graffiti/commit/7c6aef2))
+
+### docs
+
+* docs(readme): add roadmap
+ ([1a33dc0](https://github.com/RisingStack/graffiti/commit/1a33dc0))
+
+### fix
+
+* fix(middleware): use graphql of the adapter
+ ([d1af1ee](https://github.com/RisingStack/graffiti/commit/d1af1ee))
+
+
+
 <a name="1.0.1"></a>
 ## 1.0.1 (2015-07-27)
 
