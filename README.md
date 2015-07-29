@@ -18,6 +18,10 @@ The client asks for various data from the GraphQL server via queries. The respon
 
 For more info check out RisingStack's [GraphQL tutorial](https://blog.risingstack.com/graphql-overview-getting-started-with-graphql-and-nodejs/).
 
+## Example server and queries
+
+For a running **example server** and **executable queries**, check out our example repository and play with your GraphQL queries: [graffiti-example](https://github.com/RisingStack/graffiti-example)
+
 ## Adapters
 
 * [mongoose](https://github.com/RisingStack/graffiti-mongoose)
@@ -28,10 +32,6 @@ For more info check out RisingStack's [GraphQL tutorial](https://blog.risingstac
 * [Express](https://github.com/RisingStack/graffiti#express)
 * [Hapi](https://github.com/RisingStack/graffiti#hapi)
 * [Koa](https://github.com/RisingStack/graffiti#koa)
-
-## Example server and queries
-
-For a running **example server** and **executable queries**, check out our example repository and play with your GraphQL queries: [graffiti-example](https://github.com/RisingStack/graffiti-example)
 
 ## Install
 
