@@ -29,6 +29,10 @@ For more info check out RisingStack's [GraphQL tutorial](https://blog.risingstac
 * [Hapi](https://github.com/RisingStack/graffiti#hapi)
 * [Koa](https://github.com/RisingStack/graffiti#koa)
 
+## Example server and queries
+
+For a running **example server** and **executable queries**, check out our example repository and play with your GraphQL queries: [graffiti-example](https://github.com/RisingStack/graffiti-example)
+
 ## Install
 
 ```
@@ -103,10 +107,6 @@ app.use(graffiti.koa({
 
 app.listen(3000);
 ```
-
-## Example server and queries
-
-For a running **example server** and **executable queries**, check out our example repository and play with your queries: [graffiti-example](https://github.com/RisingStack/graffiti-example)
 
 ## Test
 
