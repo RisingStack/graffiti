@@ -59,7 +59,7 @@ describe('graffiti express', function() {
 
   describe('requested url starts with prefix', function() {
 
-    it('returns with proper results', function() {
+    describe('returns with proper results', function() {
 
       var result = {
         data: 1
@@ -78,21 +78,44 @@ describe('graffiti express', function() {
         }
       });
 
-      var request = {
-        method: 'GET',
-        path: '/graphql',
-        query: {
-          q: '{__type}'
-        }
-      };
+      it('as a GET request', function() {
 
-      var response = {
-        json: function(d) {
-          expect(d).to.eql(result);
-        }
-      };
+        var request = {
+          method: 'GET',
+          path: '/graphql',
+          query: {
+            q: '{__type}'
+          }
+        };
 
-      mw(request, response);
+        var response = {
+          json: function(d) {
+            expect(d).to.eql(result);
+          }
+        };
+
+        mw(request, response);
+      });
+
+      it('as a POST request', function() {
+
+        var request = {
+          method: 'POST',
+          path: '/graphql',
+          body: {
+            query: '{__type}'
+          }
+        };
+
+        var response = {
+          json: function(d) {
+            expect(d).to.eql(result);
+          }
+        };
+
+        mw(request, response);
+      });
+
     });
 
   });

@@ -1,6 +1,7 @@
 var checkDep = require('../util').checkDep;
 var isPrefixed = require('../util').isPrefixed;
 var isGet = require('../util').isGet;
+var isPost = require('../util').isPost;
 
 function create() {
   return function(options) {
@@ -13,9 +14,16 @@ function create() {
 
     return function(request, respone, next) {
 
-      var query = request.query.q;
+      var query;
+      if (isGet(request)) {
+        query = request.query.q;
+      } else if (isPost(request)) {
+        query = request.body.query;
+      } else {
+        return next();
+      }
 
-      if (isGet(request) && isPrefixed(request, prefix)) {
+      if (isPrefixed(request, prefix)) {
         return adapter.graphql(schema, query)
           .then(function(result) {
             respone.json(result);
