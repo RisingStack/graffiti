@@ -26,7 +26,7 @@ describe('graffiti hapi', function() {
 
   });
 
-  describe('returns with proper results', function(done) {
+  it('returns with proper results', function(done) {
 
     var server = new Hapi.Server();
     server.connection({ port: 3000 });
@@ -42,7 +42,7 @@ describe('graffiti hapi', function() {
         adapter: {
           getSchema: function() {},
           graphql: function() {
-            return Promise.resolve();
+            return Promise.resolve(result);
           }
         }
       }

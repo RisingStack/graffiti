@@ -14,7 +14,6 @@ function create() {
         method: 'GET',
         path: '/',
         handler: function(request, reply) {
-
           var query = request.query.q;
 
           return adapter.graphql(schema, query)
