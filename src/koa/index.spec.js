@@ -45,7 +45,7 @@ describe('graffiti koa', function() {
 
   describe('requested url starts with prefix', function() {
 
-    it('returns with proper results', function *() {
+    describe('returns with proper results', function() {
 
       var result = {
         data: 1
@@ -66,17 +66,38 @@ describe('graffiti koa', function() {
         }
       });
 
-      var request = {
-        method: 'GET',
-        path: '/graphql',
-        query: {
-          q: '{__type}'
-        }
-      };
+      it('as a GET request', function *() {
 
-      var res = yield mw.call(request);
+        var request = {
+          method: 'GET',
+          path: '/graphql',
+          query: {
+            q: '{__type}'
+          }
+        };
 
-      expect(res).to.eql(result);
+        var res = yield mw.call(request);
+
+        expect(res).to.eql(result);
+
+      });
+
+      it('as a POST request', function *() {
+
+        var request = {
+          method: 'POST',
+          path: '/graphql',
+          body: {
+            query: '{__type}'
+          }
+        };
+
+        var res = yield mw.call(request);
+
+        expect(res).to.eql(result);
+
+      });
+
     });
 
   });

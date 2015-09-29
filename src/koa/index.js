@@ -1,6 +1,7 @@
 var checkDep = require('../util').checkDep;
 var isPrefixed = require('../util').isPrefixed;
 var isGet = require('../util').isGet;
+var isPost = require('../util').isPost;
 
 function create() {
   return function koa(options) {
@@ -13,9 +14,16 @@ function create() {
 
     return function *(next) {
 
-      var query = this.query.q;
+      var query;
+      if (isGet(this)) {
+        query = this.query.q;
+      } else if (isPost(this)) {
+        query = this.body.query;
+      } else {
+        return next();
+      }
 
-      if (isGet(this) && isPrefixed(this, prefix)) {
+      if (isPrefixed(this, prefix)) {
         this.body = yield adapter.graphql(schema, query);
         return this.body;
       }
