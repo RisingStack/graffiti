@@ -20,6 +20,14 @@ describe('graffiti util', function() {
 
   });
 
+  describe('#isPost', function() {
+
+    it('returns true for POST');
+
+    it('returns false for not POSTs');
+
+  });
+
   describe('#checkDep', function() {
 
     it('throws if first argument is undefined', function() {
