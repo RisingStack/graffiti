@@ -20,7 +20,7 @@ For more info check out RisingStack's [GraphQL tutorial](https://blog.risingstac
 
 ## Example server and queries
 
-For a running **example server** and **executable queries**, check out our example repository and play with your GraphQL queries: [graffiti-example](https://github.com/RisingStack/graffiti-example)
+For a running **example server** and **executable queries**, check out our example repository and play with your GraphQL queries: [graffiti-example](https://github.com/RisingStack/graffiti-mongoose/tree/master/example)
 
 ## Adapters
 
