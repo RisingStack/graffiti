@@ -1,18 +1,16 @@
-var koa = require('koa');
-var graffiti = require('../');
-var graffitiMongoose = require('@risingstack/graffiti-mongoose');
+import koa from 'koa';
+import graffiti from '../';
+import schema from './schema';
 
-var app = koa();
+const app = koa();
 app.use(graffiti.koa({
-  prefix: '/graphql',
-  adapter: graffitiMongoose,
-  models: []
+  schema
 }));
 
-app.listen(3000, function (err) {
+app.listen(3003, (err) => {
   if (err) {
-    throw err
-  };
+    throw err;
+  }
 
-  console.log('server is listening');
+  console.log('Koa server is listening on port 3003');
 });

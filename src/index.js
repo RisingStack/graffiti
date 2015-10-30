@@ -1,7 +1,9 @@
-var koa = require('./koa');
-var hapi = require('./hapi');
-var express = require('./express');
+import koa from './koa';
+import hapi from './hapi';
+import express from './express';
 
-module.exports.koa = koa.create();
-module.exports.hapi = hapi.create();
-module.exports.express = express.create();
+export default {
+  koa,
+  hapi,
+  express
+};

@@ -1,19 +1,16 @@
-var express = require('express');
-var graffiti = require('../');
-var graffitiMongoose = require('@risingstack/graffiti-mongoose');
+import express from 'express';
+import graffiti from '../';
+import schema from './schema';
 
-var app = express();
-
+const app = express();
 app.use(graffiti.express({
-  prefix: '/graphql',
-  adapter: graffitiMongoose,
-  models: []
+  schema
 }));
 
-app.listen(3000, function (err) {
+app.listen(3001, (err) => {
   if (err) {
-    throw err
-  };
+    throw err;
+  }
 
-  console.log('server is listening');
+  console.log('Express server is listening on port 3001');
 });

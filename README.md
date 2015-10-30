@@ -1,6 +1,6 @@
 # ![graffiti](https://cloud.githubusercontent.com/assets/1764512/8900273/9ed758dc-343e-11e5-95ba-e82f876cf52d.png)
 
-[![Build Status](https://travis-ci.org/RisingStack/graffiti.svg)](https://travis-ci.org/RisingStack/graffiti)  
+[ ![Codeship Status for RisingStack/graffiti](https://codeship.com/projects/0c4fb010-5969-0133-8c37-4255fd5efb39/status?branch=master)](https://codeship.com/projects/110029)
 
 Currently the consumption of HTTP REST APIs dominate the client-side world,
 [GraphQL](https://github.com/facebook/graphql) aims to change this.
@@ -35,26 +35,29 @@ For a running **example server** and **executable queries**, check out our examp
 
 ## Install
 
-```
+```bash
 npm install @risingstack/graffiti --save
 ```
 
 ## Usage
 
+1. register the middleware
+2. provide a schema (returned by an adapters `getSchema` method or your own `GraphQLSchema` instance)
+3. the GraphQL endpoint is available on `/graphql`
+
 ### Express
 
 ```javascript
-var express = require('express');
-var graffiti = require('@risingstack/graffiti');
-var graffitiMongoose = require('@risingstack/graffiti-mongoose');
-var User = require('./models/user');
-var Cat = require('./models/cat');
+import express from 'express';
+import graffiti from '@risingstack/graffiti';
+import {getSchema} from '@risingstack/graffiti-mongoose';
 
-var app = express();
+import Cat from './models/Cat';
+import User from './models/User';
+
+const app = express();
 app.use(graffiti.express({
-  prefix: '/graphql',
-  adapter: graffitiMongoose,
-  models: [User, Cat]
+  schema: getSchema([User, Cat])
 }));
 
 app.listen(3000);
@@ -63,22 +66,17 @@ app.listen(3000);
 ### Hapi
 
 ```javascript
-var hapi = require('hapi');
-var graffiti = require('@risingstack/graffiti');
-var graffitiMongoose = require('@risingstack/graffiti-mongoose');
+import {Server} from 'hapi';
+import graffiti from '@risingstack/graffiti';
+import {getSchema} from '@risingstack/graffiti-mongoose';
 
-var server = new Hapi.Server();
+const server = new Server();
 server.connection({ port: 3000 });
 
 server.register({
   register: graffiti.hapi,
   options: {
-    adapter: graffitiMongoose,
-    models: []
-  }
-}, {
-  routes: {
-    prefix: '/graphql'
+    schema: getSchema([User, Cat])
   }
 }, function (err) {
   if (err) {
@@ -94,29 +92,28 @@ server.register({
 ### Koa
 
 ```javascript
-var koa = require('koa');
-var graffiti = require('@risingstack/graffiti');
-var graffitiMongoose = require('@risingstack/graffiti-mongoose');
+import koa from 'koa';
+import graffiti from '@risingstack/graffiti';
+import {getSchema} from '@risingstack/graffiti-mongoose';
 
-var app = koa();
+import Cat from './models/Cat';
+import User from './models/User';
+
+const app = koa();
 app.use(graffiti.koa({
-  prefix: '/graphql',
-  adapter: graffitiMongoose,
-  models: []
+  schema: getSchema([User, Cat])
 }));
 
 app.listen(3000);
 ```
 
+## Options
+
+- `schema`: a `GraphQLSchema` instance. You can use an adapters `getSchema` method, or provide your own schema. (required)
+- `graphiql`: may present [GraphiQL](https://github.com/graphql/graphiql) when loaded directly from a browser. (default: `true`)
+
 ## Test
 
-```
+```bash
 npm test
 ```
-## Roadmap
-
-* Query support *(done)*
-* Mutation support *(in progress)*
-* More adapters
-  * RethinkDB - Thinky *(in progress)*
-  * SQL - Bookshelf *(in progress)*
