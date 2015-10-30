@@ -1,19 +1,16 @@
-var expect = require('chai').expect;
+import {expect} from 'chai';
+import graffiti from './';
 
-describe('graffiti', function() {
-
-  var graffiti = require('./');
-
-  it('exposes an express function', function() {
-    expect(graffiti.express).to.be.ok;
+describe('graffiti', () => {
+  it('should expose an express function', () => {
+    expect(graffiti.express).to.be.ok; // eslint-disable-line
   });
 
-  it('exposes an hapi function', function() {
-    expect(graffiti.hapi).to.be.ok;
+  it('should expose an hapi function', () => {
+    expect(graffiti.hapi).to.be.ok; // eslint-disable-line
   });
 
-  it('exposes an koa function', function() {
-    expect(graffiti.koa).to.be.ok;
+  it('should expose an koa function', () => {
+    expect(graffiti.koa).to.be.ok; // eslint-disable-line
   });
-
 });

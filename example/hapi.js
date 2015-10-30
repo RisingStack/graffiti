@@ -1,26 +1,20 @@
-var Hapi = require('hapi');
-var graffiti = require('../');
-var graffitiMongoose = require('@risingstack/graffiti-mongoose');
+import {Server} from 'hapi';
+import graffiti from '../';
+import schema from './schema';
 
-var server = new Hapi.Server();
-server.connection({ port: 3000 });
-
+const server = new Server();
+server.connection({port: 3002});
 server.register({
   register: graffiti.hapi,
   options: {
-    adapter: graffitiMongoose,
-    models: []
+    schema
   }
-}, {
-  routes: {
-    prefix: '/graphql'
-  }
-}, function (err) {
+}, (err) => {
   if (err) {
     console.error('Failed to load plugin:', err);
   }
 
-  server.start(function () {
-    console.log('Server running at:', server.info.uri);
+  server.start(() => {
+    console.log('Hapi server is listening on port 3002');
   });
 });
