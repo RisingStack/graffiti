@@ -1,3 +1,24 @@
+<a name="2.0.0"></a>
+# 2.0.0 (2015-11-02)
+
+
+### chore
+
+* chore(package): bumping version to 2.0.0 ([4d217cf](https://github.com/RisingStack/graffiti/commit/4d217cf))
+
+### docs
+
+* docs(readme): add example sever section to the README ([370f8b3](https://github.com/RisingStack/graffiti/commit/370f8b3))
+* docs(readme): change example ([f199db1](https://github.com/RisingStack/graffiti/commit/f199db1))
+* docs(readme): move example section above adapters ([2f9a988](https://github.com/RisingStack/graffiti/commit/2f9a988))
+* docs(readme): move example section above install ([2322532](https://github.com/RisingStack/graffiti/commit/2322532))
+
+### feat
+
+* feat(package): reimplement in ES6, support GET and POST methods, GraphiQL integration ([ee77980](https://github.com/RisingStack/graffiti/commit/ee77980))
+
+
+
 <a name="1.0.2"></a>
 ## 1.0.2 (2015-07-28)
 
