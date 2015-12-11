@@ -7,8 +7,7 @@
   },
   "dependencies": {
     "@risingstack/graffiti": "../",
-    "@risingstack/graffiti-mongoose": "^4.0.1",
-    "babel": "^5.8.21",
+    "@risingstack/graffiti-mongoose": "^4.3.2",
     "express": "^4.13.3",
     "koa": "^1.1.0",
     "koa-static": "^1.5.1",

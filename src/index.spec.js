@@ -1,4 +1,4 @@
-import {expect} from 'chai';
+import { expect } from 'chai';
 import graffiti from './';
 
 describe('graffiti', () => {

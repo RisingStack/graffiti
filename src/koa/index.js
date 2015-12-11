@@ -1,1 +1,1 @@
-export {default} from './koa';
+export { default } from './koa';

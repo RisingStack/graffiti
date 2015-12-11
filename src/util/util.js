@@ -18,7 +18,7 @@ const GRAPHIQL_VERSION = '0.3.1';
 
 // TODO default query
 // const defaultQuery = ``;
-export function renderGraphiQL({query, variables, version = GRAPHIQL_VERSION} = {}) {
+export function renderGraphiQL({ query, variables, version = GRAPHIQL_VERSION } = {}) {
   return `
     <!DOCTYPE html>
     <html>

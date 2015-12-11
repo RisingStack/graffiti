@@ -1,5 +1,5 @@
-import {graphql} from 'graphql';
-import {json} from 'co-body';
+import { graphql } from 'graphql';
+import { json } from 'co-body';
 import {
   badRequest,
   methodNotAllowed
@@ -13,18 +13,18 @@ import {
 } from '../util';
 
 function sendError(response, boom) {
-  const {statusCode, payload} = boom.output;
+  const { statusCode, payload } = boom.output;
   response.status(statusCode).send(payload);
 }
 
-export default function middleware({graphiql = true, schema = required()} = {}) {
+export default function middleware({ graphiql = true, schema = required() } = {}) {
   return (request, response, next) => {
     if (isPath(request) && (isPost(request) || isGet(request))) {
       return json(request).then((body) => {
-        const {query, variables} = Object.assign({}, body, request.query);
+        const { query, variables } = Object.assign({}, body, request.query);
 
         if (isGet(request) && request.accepts('html') && graphiql) {
-          return response.send(renderGraphiQL({query, variables}));
+          return response.send(renderGraphiQL({ query, variables }));
         }
 
         if (isGet(request) && query && query.includes('mutation')) {

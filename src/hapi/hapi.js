@@ -1,4 +1,4 @@
-import {graphql} from 'graphql';
+import { graphql } from 'graphql';
 import {
   badRequest,
   methodNotAllowed
@@ -11,18 +11,18 @@ import {
 
 import pkg from '../../package.json';
 
-function accepts({headers}, type) {
+function accepts({ headers }, type) {
   return headers.accept && headers.accept.includes(type);
 }
 
 const plugin = {
-  register: (server, {graphiql = true, schema = required()} = {}, next) => {
+  register: (server, { graphiql = true, schema = required() } = {}, next) => {
     const handler = (request, reply) => {
       const data = request.payload || request.query || {};
-      const {query, variables} = data;
+      const { query, variables } = data;
 
       if (accepts(request, 'html') && graphiql) {
-        return reply(renderGraphiQL({query, variables}));
+        return reply(renderGraphiQL({ query, variables }));
       }
 
       if (query && query.includes('mutation') && isGet(request)) {
@@ -61,6 +61,6 @@ const plugin = {
   }
 };
 
-plugin.register.attributes = {pkg};
+plugin.register.attributes = { pkg };
 
 export default plugin;

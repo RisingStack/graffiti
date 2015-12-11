@@ -1,4 +1,4 @@
-import {expect} from 'chai';
+import { expect } from 'chai';
 import parser from 'co-body';
 import koa from './';
 
@@ -34,7 +34,7 @@ describe('graffiti koa', () => {
         }
       };
 
-      const result = {data: 1};
+      const result = { data: 1 };
       const res = yield mw.call(request);
 
       expect(res.data).to.eql(result);
@@ -56,7 +56,7 @@ describe('graffiti koa', () => {
         }
       };
 
-      const result = {data: 1};
+      const result = { data: 1 };
       const res = yield mw.call(request);
 
       expect(res.data).to.eql(result);
@@ -98,7 +98,7 @@ describe('graffiti koa', () => {
         }
       };
 
-      const result = {data: 1};
+      const result = { data: 1 };
       const res = yield mw.call(request);
       expect(res.data).to.eql(result);
     });

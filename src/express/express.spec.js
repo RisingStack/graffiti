@@ -1,4 +1,4 @@
-import {expect} from 'chai';
+import { expect } from 'chai';
 import parser from 'co-body';
 import express from './';
 
@@ -54,7 +54,7 @@ describe('graffiti express', () => {
     });
 
     it('should return with proper result on GET', function postTest(done) {
-      const result = {data: 1};
+      const result = { data: 1 };
       const mw = mwFactory({
         schema: this.schema
       });
@@ -70,7 +70,7 @@ describe('graffiti express', () => {
       };
 
       const response = {
-        json: ({data}) => {
+        json: ({ data }) => {
           expect(data).to.be.eql(result);
           done();
         }
@@ -99,7 +99,7 @@ describe('graffiti express', () => {
 
       const response = {
         status: () => response,
-        send: ({statusCode}) => {
+        send: ({ statusCode }) => {
           expect(statusCode).to.be.eql(405);
           done();
         }
@@ -109,7 +109,7 @@ describe('graffiti express', () => {
     });
 
     it('should return with proper result on POST', function postTest(done) {
-      const result = {data: 1};
+      const result = { data: 1 };
       const mw = mwFactory({
         schema: this.schema
       });
@@ -125,7 +125,7 @@ describe('graffiti express', () => {
       };
 
       const response = {
-        json: ({data}) => {
+        json: ({ data }) => {
           expect(data).to.be.eql(result);
           done();
         }
@@ -171,9 +171,9 @@ describe('graffiti express', () => {
         accepts: (type) => type === 'html'
       };
 
-      const result = {data: 1};
+      const result = { data: 1 };
       const response = {
-        json: ({data}) => {
+        json: ({ data }) => {
           expect(data).to.be.eql(result);
           done();
         }

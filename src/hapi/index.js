@@ -1,1 +1,1 @@
-export {default} from './hapi';
+export { default } from './hapi';

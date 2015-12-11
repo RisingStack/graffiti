@@ -1,5 +1,5 @@
-import {expect} from 'chai';
-import {Server} from 'hapi';
+import { expect } from 'chai';
+import { Server } from 'hapi';
 import hapi from './';
 
 describe('graffiti hapi', () => {
@@ -18,7 +18,7 @@ describe('graffiti hapi', () => {
       const server = new Server();
       server.connection({ port: 3000 });
 
-      const result = {data: 1};
+      const result = { data: 1 };
 
       server.register({
         register: hapi,
@@ -33,7 +33,7 @@ describe('graffiti hapi', () => {
         server.inject({
           method: 'GET',
           url: '/graphql?query={data}'
-        }, ({payload}) => {
+        }, ({ payload }) => {
           expect(JSON.parse(payload).data).to.eql(result);
           done();
         });
@@ -57,7 +57,7 @@ describe('graffiti hapi', () => {
         server.inject({
           method: 'GET',
           url: '/graphql?query=mutation%20mutate%20{updateData(data:"123"){data}}'
-        }, ({payload}) => {
+        }, ({ payload }) => {
           expect(JSON.parse(payload).error).to.be.ok; // eslint-disable-line
           done();
         });
@@ -68,7 +68,7 @@ describe('graffiti hapi', () => {
       const server = new Server();
       server.connection({ port: 3000 });
 
-      const result = {data: 1};
+      const result = { data: 1 };
 
       server.register({
         register: hapi,
@@ -87,7 +87,7 @@ describe('graffiti hapi', () => {
             query: '{data}',
             variables: {}
           }
-        }, ({payload}) => {
+        }, ({ payload }) => {
           expect(JSON.parse(payload).data).to.eql(result);
           done();
         });
@@ -114,7 +114,7 @@ describe('graffiti hapi', () => {
           headers: {
             Accept: 'text/html'
           }
-        }, ({payload}) => {
+        }, ({ payload }) => {
           expect(payload.includes('GraphiQL')).to.be.ok; // eslint-disable-line
           done();
         });
@@ -142,7 +142,7 @@ describe('graffiti hapi', () => {
           headers: {
             Accept: 'text/html'
           }
-        }, ({statusCode}) => {
+        }, ({ statusCode }) => {
           expect(statusCode).to.be.eql(404);
           done();
         });
