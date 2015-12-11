@@ -1,9 +1,20 @@
+<a name="2.1.1"></a>
+## 2.1.1 (2015-12-11)
+
+
+### fix
+
+* fix(index): fix exports ([9b5a4ef](https://github.com/RisingStack/graffiti/commit/9b5a4ef))
+
+
+
 <a name="2.1.0"></a>
 # 2.1.0 (2015-12-11)
 
 
 ### chore
 
+* chore(package): bump version to 2.1.0 ([adbe60b](https://github.com/RisingStack/graffiti/commit/adbe60b))
 * chore(package): update dependencies ([8aa2856](https://github.com/RisingStack/graffiti/commit/8aa2856))
 
 
@@ -115,3 +126,6 @@
 * test(hapi): improve Hapi plugin test coverage ([1be58ad](https://github.com/RisingStack/graffiti/commit/1be58ad))
 * test(koa): cover Koa middleware with tests ([f0dce2e](https://github.com/RisingStack/graffiti/commit/f0dce2e))
 * test(util): add skipping test cases for isPrefixed and isGet ([e824db5](https://github.com/RisingStack/graffiti/commit/e824db5))
+
+
+
