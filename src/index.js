@@ -7,3 +7,9 @@ export default {
   hapi,
   express
 };
+
+export {
+  koa,
+  hapi,
+  express
+};
