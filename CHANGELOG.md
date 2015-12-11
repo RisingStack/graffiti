@@ -1,10 +1,20 @@
+<a name="2.1.0"></a>
+# 2.1.0 (2015-12-11)
+
+
+### chore
+
+* chore(package): update dependencies ([8aa2856](https://github.com/RisingStack/graffiti/commit/8aa2856))
+
+
+
 <a name="2.0.0"></a>
 # 2.0.0 (2015-11-02)
 
 
 ### chore
 
-* chore(package): bumping version to 2.0.0 ([4d217cf](https://github.com/RisingStack/graffiti/commit/4d217cf))
+* chore(package): bumping version to 2.0.0 ([33790ee](https://github.com/RisingStack/graffiti/commit/33790ee))
 
 ### docs
 
