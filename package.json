@@ -45,7 +45,7 @@
     "chai": "^3.4.1",
     "chai-subset": "^1.2.0",
     "eslint": "1.10.3",
-    "eslint-config-airbnb": "^2.0.0",
+    "eslint-config-airbnb": "^2.1.1",
     "express": "^4.13.3",
     "graphql": "^0.4.14",
     "hapi": "^11.1.2",
