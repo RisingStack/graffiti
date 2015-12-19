@@ -1,6 +1,20 @@
+<a name="2.1.2"></a>
+## 2.1.2 (2015-12-19)
+
+
+### chore
+
+* chore(package): update dependencies ([88e89ff](https://github.com/RisingStack/graffiti/commit/88e89ff))
+
+
+
 <a name="2.1.1"></a>
 ## 2.1.1 (2015-12-11)
 
+
+### chore
+
+* chore(package): update version to 2.1.1 ([dc9536b](https://github.com/RisingStack/graffiti/commit/dc9536b))
 
 ### fix
 
