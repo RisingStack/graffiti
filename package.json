@@ -28,14 +28,14 @@
   },
   "homepage": "https://github.com/RisingStack/graffiti#readme",
   "dependencies": {
-    "boom": "^3.0.0",
+    "boom": "^3.1.1",
     "co-body": "^4.0.0"
   },
   "peerDependencies": {
     "graphql": "^0.4.14"
   },
   "devDependencies": {
-    "babel": "^6.3.13",
+    "babel": "^6.3.26",
     "babel-cli": "^6.3.17",
     "babel-eslint": "^5.0.0-beta6",
     "babel-polyfill": "^6.3.14",
@@ -48,7 +48,7 @@
     "eslint-config-airbnb": "^2.1.1",
     "express": "^4.13.3",
     "graphql": "^0.4.14",
-    "hapi": "^11.1.2",
+    "hapi": "^11.1.4",
     "koa": "^2.0.0-alpha.2",
     "mocha": "^2.3.4",
     "pre-commit": "^1.1.2",
