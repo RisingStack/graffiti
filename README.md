@@ -1,6 +1,7 @@
 # ![graffiti](https://cloud.githubusercontent.com/assets/1764512/8900273/9ed758dc-343e-11e5-95ba-e82f876cf52d.png)
 
 [ ![Codeship Status for RisingStack/graffiti](https://codeship.com/projects/0c4fb010-5969-0133-8c37-4255fd5efb39/status?branch=master)](https://codeship.com/projects/110029)
+[![bitHound Overall Score](https://www.bithound.io/github/RisingStack/graffiti/badges/score.svg)](https://www.bithound.io/github/RisingStack/graffiti)
 
 Currently the consumption of HTTP REST APIs dominate the client-side world,
 [GraphQL](https://github.com/facebook/graphql) aims to change this.
