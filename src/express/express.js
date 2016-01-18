@@ -20,7 +20,11 @@ function sendError(response, boom) {
 export default function middleware({ graphiql = true, schema = required() } = {}) {
   return (request, response, next) => {
     if (isPath(request) && (isPost(request) || isGet(request))) {
-      return json(request).then((body) => {
+      let promise = Promise.resolve(request.body);
+      if (!(request.body instanceof Object)) {
+        promise = json(request);
+      }
+      return promise.then((body) => {
         const { query, variables } = Object.assign({}, body, request.query);
 
         if (isGet(request) && request.accepts('html') && graphiql) {

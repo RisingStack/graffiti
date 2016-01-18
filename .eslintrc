@@ -21,6 +21,7 @@
     "no-shadow": 0,
     "no-param-reassign": 0,
     "id-length": [2, {"exceptions": ["_", "i"]}],
-    "comma-dangle": [1, "never"]
+    "comma-dangle": [1, "never"],
+    "max-len": [2, 120, 2]
   }
 }
