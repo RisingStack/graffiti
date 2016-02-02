@@ -1,6 +1,20 @@
+<a name="3.0.1"></a>
+## 3.0.1 (2016-02-02)
+
+
+### fix
+
+* fix(koa): use the parsed body ([025070e](https://github.com/RisingStack/graffiti/commit/025070e))
+
+
+
 <a name="3.0.0"></a>
 # 3.0.0 (2016-02-02)
 
+
+### chore
+
+* chore(package): bump version to 3.0.0 ([1b38fe6](https://github.com/RisingStack/graffiti/commit/1b38fe6))
 
 ### docs
 
