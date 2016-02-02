@@ -1,9 +1,28 @@
+<a name="3.0.0"></a>
+# 3.0.0 (2016-02-02)
+
+
+### docs
+
+* docs(readme): add bitHound badge ([6d2277e](https://github.com/RisingStack/graffiti/commit/6d2277e))
+
+### feat
+
+* feat(package): don't include body parsers in the middleware ([57f39e6](https://github.com/RisingStack/graffiti/commit/57f39e6))
+
+### style
+
+* style(example): lint examples ([1cf46c5](https://github.com/RisingStack/graffiti/commit/1cf46c5))
+
+
+
 <a name="2.1.3"></a>
 ## 2.1.3 (2016-01-18)
 
 
 ### chore
 
+* chore(package): bump version to 2.1.3 ([5a0c2b0](https://github.com/RisingStack/graffiti/commit/5a0c2b0))
 * chore(package): update dependencies ([284d9e8](https://github.com/RisingStack/graffiti/commit/284d9e8))
 * chore(package): update dependencies ([c452618](https://github.com/RisingStack/graffiti/commit/c452618))
 
