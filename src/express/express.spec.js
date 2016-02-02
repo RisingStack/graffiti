@@ -1,13 +1,8 @@
 import { expect } from 'chai';
-import parser from 'co-body';
 import express from './';
 
 describe('graffiti express', () => {
   const mwFactory = express;
-
-  beforeEach(function stub() {
-    this.sandbox.stub(parser, 'json', (request) => Promise.resolve(request.body));
-  });
 
   describe('checks for required options', () => {
     it('should throw an error if not all met', () => {

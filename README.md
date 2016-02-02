@@ -21,7 +21,7 @@ For more info check out RisingStack's [GraphQL tutorial](https://blog.risingstac
 
 ## Example server and queries
 
-For a running **example server** and **executable queries**, check out our example repository and play with your GraphQL queries: [graffiti-example](https://github.com/RisingStack/graffiti-mongoose/tree/master/example)
+For a running **example server** and **executable queries**, check out our example repository and play with your GraphQL queries: [graffiti-example](https://github.com/RisingStack/graffiti/tree/master/example)
 
 ## Adapters
 
@@ -42,6 +42,7 @@ npm install @risingstack/graffiti --save
 
 ## Usage
 
+0. run MongoDB
 1. register the middleware
 2. provide a schema (returned by an adapters `getSchema` method or your own `GraphQLSchema` instance)
 3. the GraphQL endpoint is available on `/graphql`
@@ -50,13 +51,18 @@ npm install @risingstack/graffiti --save
 
 ```javascript
 import express from 'express';
+import { json } from 'body-parser';
 import graffiti from '@risingstack/graffiti';
-import {getSchema} from '@risingstack/graffiti-mongoose';
+import { getSchema } from '@risingstack/graffiti-mongoose';
 
 import Cat from './models/Cat';
 import User from './models/User';
 
 const app = express();
+
+// parse body as json
+app.use(json());
+
 app.use(graffiti.express({
   schema: getSchema([User, Cat])
 }));
@@ -67,9 +73,9 @@ app.listen(3000);
 ### Hapi
 
 ```javascript
-import {Server} from 'hapi';
+import { Server } from 'hapi';
 import graffiti from '@risingstack/graffiti';
-import {getSchema} from '@risingstack/graffiti-mongoose';
+import { getSchema } from '@risingstack/graffiti-mongoose';
 
 const server = new Server();
 server.connection({ port: 3000 });
@@ -94,13 +100,17 @@ server.register({
 
 ```javascript
 import koa from 'koa';
+import parser from 'koa-bodyparser';
 import graffiti from '@risingstack/graffiti';
-import {getSchema} from '@risingstack/graffiti-mongoose';
+import { getSchema } from '@risingstack/graffiti-mongoose';
 
 import Cat from './models/Cat';
 import User from './models/User';
 
 const app = koa();
+
+app.use(parser());
+
 app.use(graffiti.koa({
   schema: getSchema([User, Cat])
 }));

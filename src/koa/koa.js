@@ -1,5 +1,4 @@
 import { graphql } from 'graphql';
-import { json } from 'co-body';
 import {
   required,
   isPath,
@@ -15,7 +14,7 @@ function accepts(type) {
 export default function middleware({ graphiql = true, schema = required() } = {}) {
   return function *middleware(next) {
     if (isPath(this) && (isPost(this) || isGet(this))) {
-      const body = yield json(this);
+      const body = this.body;
       const { query, variables } = Object.assign({}, body, this.query);
 
       if (isGet(this) && accepts.call(this, 'html') && graphiql) {

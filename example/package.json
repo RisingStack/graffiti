@@ -7,10 +7,12 @@
   },
   "dependencies": {
     "@risingstack/graffiti": "../",
-    "@risingstack/graffiti-mongoose": "^5.0.3",
-    "express": "^4.13.3",
+    "@risingstack/graffiti-mongoose": "^5.0.5",
+    "body-parser": "^1.14.2",
+    "express": "^4.13.4",
     "koa": "^1.1.2",
-    "koa-static": "^1.5.2",
-    "mongoose": "^4.3.4"
+    "koa-bodyparser": "^2.0.1",
+    "koa-static": "^2.0.0",
+    "mongoose": "^4.3.7"
   }
 }

@@ -1,12 +1,7 @@
 import { expect } from 'chai';
-import parser from 'co-body';
 import koa from './';
 
 describe('graffiti koa', () => {
-  beforeEach(function stub() {
-    this.sandbox.stub(parser, 'json', (request) => Promise.resolve(request.payload || request.body));
-  });
-
   describe('checks for required options', () => {
     it('should throw an error if not all met', () => {
       const mwFactory = koa;

@@ -28,31 +28,30 @@
   },
   "homepage": "https://github.com/RisingStack/graffiti#readme",
   "dependencies": {
-    "boom": "^3.1.1",
-    "co-body": "^4.0.0"
+    "boom": "^3.1.2"
   },
   "peerDependencies": {
     "graphql": "^0.4.14"
   },
   "devDependencies": {
     "babel": "^6.3.26",
-    "babel-cli": "^6.4.0",
+    "babel-cli": "^6.4.5",
     "babel-eslint": "^5.0.0-beta6",
     "babel-polyfill": "^6.3.14",
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-stage-0": "^6.3.13",
     "babel-register": "^6.4.3",
-    "chai": "^3.4.1",
+    "chai": "^3.5.0",
     "chai-subset": "^1.2.0",
     "eslint": "1.10.3",
-    "eslint-config-airbnb": "^3.1.0",
-    "express": "^4.13.3",
+    "eslint-config-airbnb": "^4.0.0",
+    "express": "^4.13.4",
     "graphql": "^0.4.14",
-    "hapi": "^12.1.0",
+    "hapi": "^13.0.0",
     "koa": "^2.0.0-alpha.2",
-    "mocha": "^2.3.4",
+    "mocha": "^2.4.5",
     "pre-commit": "^1.1.2",
-    "sinon": "^1.17.2",
+    "sinon": "^1.17.3",
     "sinon-chai": "^2.8.0"
   },
   "pre-commit": [
