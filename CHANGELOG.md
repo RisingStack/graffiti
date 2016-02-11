@@ -1,6 +1,20 @@
+<a name="3.0.2"></a>
+## 3.0.2 (2016-02-11)
+
+
+### chore
+
+* chore(package): update dependencies ([0ac63c9](https://github.com/RisingStack/graffiti/commit/0ac63c9))
+
+
+
 <a name="3.0.1"></a>
 ## 3.0.1 (2016-02-02)
 
+
+### chore
+
+* chore(package): bump version to 3.0.1 ([e0ab6d6](https://github.com/RisingStack/graffiti/commit/e0ab6d6))
 
 ### fix
 
