@@ -31,7 +31,10 @@ export default function middleware({ graphiql = true, schema = required() } = {}
         return sendError(response, boom);
       }
 
-      return graphql(schema, query, request, variables)
+      const parsedVariables = (typeof variables === 'string' && variables.length > 0) ?
+        JSON.parse(variables) : variables;
+
+      return graphql(schema, query, request, parsedVariables)
         .then((result) => {
           if (result.errors) {
             const message = result.errors.map((error) => error.message).join('\n');
