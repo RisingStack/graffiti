@@ -129,6 +129,34 @@ describe('graffiti express', () => {
       mw(request, response);
     });
 
+    it('should successfully accept variables for mutations via POST', function postTest(done) {
+      const result = { updateData: '123' };
+      const mw = mwFactory({
+        schema: this.schema
+      });
+
+      const request = {
+        method: 'POST',
+        path: '/graphql',
+        body: {
+          query: `mutation mutate($data: String!) {
+            updateData(data: $data)
+          }`,
+          variables: '{ "data": "123" }'
+        },
+        accepts: (type) => type === 'json'
+      };
+
+      const response = {
+        json: ({ data }) => {
+          expect(data).to.be.eql(result);
+          done();
+        }
+      };
+
+      mw(request, response);
+    });
+
     it('should return with GraphiQL on GET when it is enabled', function getTest(done) {
       const mw = mwFactory({
         schema: this.schema
