@@ -29,7 +29,14 @@ const plugin = {
         return reply(methodNotAllowed('GraphQL mutation only allowed in POST request.'));
       }
 
-      return graphql(schema, query, request, variables)
+      let parsedVariables = variables;
+      try {
+        parsedVariables = JSON.parse(variables);
+      } catch (err) {
+        // ignore
+      }
+
+      return graphql(schema, query, request, parsedVariables)
         .then((result) => {
           if (result.errors) {
             const message = result.errors.map((error) => error.message).join('\n');

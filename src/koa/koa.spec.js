@@ -57,6 +57,30 @@ describe('graffiti koa', () => {
       expect(res.data).to.eql(result);
     });
 
+    it('should accept variables for mutations via POST', function *postTest() {
+      const mwFactory = koa;
+
+      const mw = mwFactory({
+        schema: this.schema
+      });
+
+      const request = {
+        method: 'POST',
+        path: '/graphql',
+        payload: {
+          query: `mutation mutate($data: String!) {
+            updateData(data: $data)
+          }`,
+          variables: '{ "data": "123" }'
+        }
+      };
+
+      const result = { updateData: '123' };
+      const res = yield mw.call(request);
+
+      expect(res.data).to.eql(result);
+    });
+
     it('should return with GraphiQL on GET when it is enabled', function *getTest() {
       const mwFactory = koa;
 

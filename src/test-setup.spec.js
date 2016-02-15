@@ -5,7 +5,8 @@ import chaiSubset from 'chai-subset';
 import {
   GraphQLSchema,
   GraphQLObjectType,
-  GraphQLInt
+  GraphQLInt,
+  GraphQLString
 } from 'graphql';
 
 before(() => {
@@ -23,6 +24,22 @@ beforeEach(function beforeEachTest() {
           name: 'data',
           type: GraphQLInt,
           resolve: () => 1
+        }
+      }
+    }),
+    mutation: new GraphQLObjectType({
+      name: 'RootMutationType',
+      fields: {
+        updateData: {
+          type: GraphQLString,
+          args: {
+            data: {
+              name: 'data',
+              type: GraphQLString
+            }
+          },
+          description: 'Returns the data provided',
+          resolve: (obj, { data }) => data
         }
       }
     })

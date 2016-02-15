@@ -28,7 +28,14 @@ export default function middleware({ graphiql = true, schema = required() } = {}
         return this.body;
       }
 
-      this.body = yield graphql(schema, query, this, variables);
+      let parsedVariables = variables;
+      try {
+        parsedVariables = JSON.parse(variables);
+      } catch (err) {
+        // ignore
+      }
+
+      this.body = yield graphql(schema, query, this, parsedVariables);
       return this.body;
     }
 

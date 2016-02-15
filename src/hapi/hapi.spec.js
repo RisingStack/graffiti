@@ -94,6 +94,38 @@ describe('graffiti hapi', () => {
       });
     });
 
+    it('should accept variables for mutations via POST', function postTest(done) {
+      const server = new Server();
+      server.connection({ port: 3000 });
+
+      const result = { updateData: '123' };
+
+      server.register({
+        register: hapi,
+        options: {
+          schema: this.schema
+        }
+      }, (err) => {
+        if (err) {
+          return done(err);
+        }
+
+        server.inject({
+          method: 'POST',
+          url: '/graphql',
+          payload: {
+            query: `mutation mutate($data: String!) {
+              updateData(data: $data)
+            }`,
+            variables: '{ "data": "123" }'
+          }
+        }, ({ payload }) => {
+          expect(JSON.parse(payload).data).to.eql(result);
+          done();
+        });
+      });
+    });
+
     it('should return with GraphiQL on GET when it is enabled', function getTest(done) {
       const server = new Server();
       server.connection({ port: 3000 });
