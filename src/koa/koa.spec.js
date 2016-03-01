@@ -30,7 +30,7 @@ describe('graffiti koa', () => {
       };
 
       const result = { data: 1 };
-      const res = yield mw.call(request);
+      const res = yield mw.call(Object.assign(request, { request }));
 
       expect(res.data).to.eql(result);
     });
@@ -45,14 +45,14 @@ describe('graffiti koa', () => {
       const request = {
         method: 'POST',
         path: '/graphql',
-        payload: {
+        body: {
           query: '{data}',
           variables: {}
         }
       };
 
       const result = { data: 1 };
-      const res = yield mw.call(request);
+      const res = yield mw.call(Object.assign(request, { request }));
 
       expect(res.data).to.eql(result);
     });
@@ -67,7 +67,7 @@ describe('graffiti koa', () => {
       const request = {
         method: 'POST',
         path: '/graphql',
-        payload: {
+        body: {
           query: `mutation mutate($data: String!) {
             updateData(data: $data)
           }`,
@@ -76,7 +76,7 @@ describe('graffiti koa', () => {
       };
 
       const result = { updateData: '123' };
-      const res = yield mw.call(request);
+      const res = yield mw.call(Object.assign(request, { request }));
 
       expect(res.data).to.eql(result);
     });
@@ -96,7 +96,7 @@ describe('graffiti koa', () => {
         }
       };
 
-      const res = yield mw.call(request);
+      const res = yield mw.call(Object.assign(request, { request }));
 
       expect(res.includes('GraphiQL')).to.be.ok; // eslint-disable-line
     });
@@ -118,7 +118,7 @@ describe('graffiti koa', () => {
       };
 
       const result = { data: 1 };
-      const res = yield mw.call(request);
+      const res = yield mw.call(Object.assign(request, { request }));
       expect(res.data).to.eql(result);
     });
   });

@@ -4,7 +4,7 @@
   "description": "Mongoose adapter for graffiti (Node.js GraphQL ORM)",
   "main": "lib/index.js",
   "scripts": {
-    "test": "NODE_ENV=test mocha --compilers js:babel-register --require babel-polyfill 'src/**/*.spec.js'",
+    "test": "NODE_ENV=test mocha --compilers js:babel-register --require babel-polyfill --require co-mocha 'src/**/*.spec.js'",
     "eslint": "eslint src",
     "prepublish": "npm test && npm run build",
     "build": "rm -rf lib/* && babel src --ignore *.spec.js --out-dir lib"
@@ -43,6 +43,7 @@
     "babel-register": "^6.5.1",
     "chai": "^3.5.0",
     "chai-subset": "^1.2.0",
+    "co-mocha": "^1.1.2",
     "eslint": "1.10.3",
     "eslint-config-airbnb": "^5.0.0",
     "express": "^4.13.4",
