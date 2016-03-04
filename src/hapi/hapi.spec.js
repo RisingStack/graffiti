@@ -27,7 +27,8 @@ describe('graffiti hapi', () => {
         }
       }, (err) => {
         if (err) {
-          return done(err);
+          done(err);
+          return;
         }
 
         server.inject({
@@ -51,7 +52,8 @@ describe('graffiti hapi', () => {
         }
       }, (err) => {
         if (err) {
-          return done(err);
+          done(err);
+          return;
         }
 
         server.inject({
@@ -77,7 +79,8 @@ describe('graffiti hapi', () => {
         }
       }, (err) => {
         if (err) {
-          return done(err);
+          done(err);
+          return;
         }
 
         server.inject({
@@ -107,7 +110,8 @@ describe('graffiti hapi', () => {
         }
       }, (err) => {
         if (err) {
-          return done(err);
+          done(err);
+          return;
         }
 
         server.inject({
@@ -137,7 +141,8 @@ describe('graffiti hapi', () => {
         }
       }, (err) => {
         if (err) {
-          return done(err);
+          done(err);
+          return;
         }
 
         server.inject({
@@ -165,7 +170,8 @@ describe('graffiti hapi', () => {
         }
       }, (err) => {
         if (err) {
-          return done(err);
+          done(err);
+          return;
         }
 
         server.inject({

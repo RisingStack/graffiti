@@ -40,7 +40,8 @@ const plugin = {
         .then((result) => {
           if (result.errors) {
             const message = result.errors.map((error) => error.message).join('\n');
-            return reply(badRequest(message));
+            reply(badRequest(message));
+            return;
           }
 
           reply(result);

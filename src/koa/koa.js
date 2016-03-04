@@ -39,6 +39,6 @@ export default function middleware({ graphiql = true, schema = required() } = {}
       return this.body;
     }
 
-    yield next;
+    return next;
   };
 }

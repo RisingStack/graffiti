@@ -43,7 +43,8 @@ export default function middleware({ graphiql = true, schema = required() } = {}
           if (result.errors) {
             const message = result.errors.map((error) => error.message).join('\n');
             const boom = badRequest(message);
-            return sendError(response, boom);
+            sendError(response, boom);
+            return;
           }
 
           response.json(result);
