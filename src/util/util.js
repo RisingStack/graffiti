@@ -14,7 +14,7 @@ export function required() {
   throw new Error('Required option is missing');
 }
 
-const GRAPHIQL_VERSION = '0.3.1';
+const GRAPHIQL_VERSION = '0.6.0';
 
 // TODO default query
 // const defaultQuery = ``;
@@ -25,7 +25,8 @@ export function renderGraphiQL({ query, variables, version = GRAPHIQL_VERSION } 
       <head>
         <link href="//cdn.jsdelivr.net/graphiql/${version}/graphiql.css" rel="stylesheet" />
         <script src="//cdn.jsdelivr.net/fetch/0.9.0/fetch.min.js"></script>
-        <script src="//cdn.jsdelivr.net/react/0.14.1/react.min.js"></script>
+        <script src="//cdn.jsdelivr.net/react/0.14.7/react.min.js"></script>
+        <script src="//cdn.jsdelivr.net/react/0.14.7/react-dom.min.js"></script>>
         <script src="//cdn.jsdelivr.net/graphiql/${version}/graphiql.min.js"></script>
       </head>
       <body>
@@ -80,18 +81,28 @@ export function renderGraphiQL({ query, variables, version = GRAPHIQL_VERSION } 
           function graphQLFetcher(graphQLParams) {
             return fetch(window.location.origin + '/graphql', {
               method: 'post',
-              headers: { 'Content-Type': 'application/json' },
+              headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+              },
               body: JSON.stringify(graphQLParams),
+              credentials: 'include',
             }).then(function (response) {
-              return response.json()
+              return response.text();
+            }).then(function (responseBody) {
+              try {
+                return JSON.parse(responseBody);
+              } catch (error) {
+                return responseBody;
+              }
             });
           }
           // Render <GraphiQL /> into the body.
-          React.render(
+          ReactDOM.render(
             React.createElement(GraphiQL, {
               fetcher: graphQLFetcher,
-              query: ${query ? `\`${query}\`` : '\'\''},
-              variables: ${variables ? `\`${variables}\`` : '\'\''},
+              query: ${query ? `\`${query}\`` : 'parameters.query'},
+              variables: ${variables ? `\`${variables}\`` : 'parameters.variables'},
               onEditQuery: onEditQuery,
               onEditVariables: onEditVariables
             }),
