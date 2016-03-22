@@ -23,9 +23,7 @@ export default function middleware({ graphiql = true, schema = required() } = {}
       }
 
       if (isGet(this) && query && query.includes('mutation')) {
-        this.status = 406;
-        this.body = 'GraphQL mutation only allowed in POST request.';
-        return this.body;
+        this.throw(406, 'GraphQL mutation only allowed in POST request.');
       }
 
       let parsedVariables = variables;
@@ -39,6 +37,6 @@ export default function middleware({ graphiql = true, schema = required() } = {}
       return this.body;
     }
 
-    return next;
+    return yield next;
   };
 }
