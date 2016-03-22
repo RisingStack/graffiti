@@ -1,9 +1,34 @@
+<a name="3.0.3"></a>
+## 3.0.3 (2016-03-22)
+
+
+### chore
+
+* chore(package): update dependencies ([7778a6d](https://github.com/RisingStack/graffiti/commit/7778a6d))
+* chore(package): update dependencies ([9cc303c](https://github.com/RisingStack/graffiti/commit/9cc303c))
+
+### feat
+
+* feat(util): update GraphiQL ([1446f89](https://github.com/RisingStack/graffiti/commit/1446f89))
+
+### fix
+
+* fix(chore): accept variables for mutations via POST ([e2292e7](https://github.com/RisingStack/graffiti/commit/e2292e7))
+* fix(koa): fix koa middleware ([d969942](https://github.com/RisingStack/graffiti/commit/d969942))
+
+### test
+
+* test(koa): fix koa tests, include co-mocha ([a32cf8e](https://github.com/RisingStack/graffiti/commit/a32cf8e))
+
+
+
 <a name="3.0.2"></a>
 ## 3.0.2 (2016-02-11)
 
 
 ### chore
 
+* chore(package): bump version to 3.0.2 ([ddb11dd](https://github.com/RisingStack/graffiti/commit/ddb11dd))
 * chore(package): update dependencies ([0ac63c9](https://github.com/RisingStack/graffiti/commit/0ac63c9))
 
 
