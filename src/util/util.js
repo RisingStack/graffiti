@@ -16,18 +16,24 @@ export function required() {
 
 const GRAPHIQL_VERSION = '0.6.0';
 
-// TODO default query
-// const defaultQuery = ``;
 export function renderGraphiQL({ query, variables, version = GRAPHIQL_VERSION } = {}) {
   return `
     <!DOCTYPE html>
     <html>
       <head>
-        <link href="//cdn.jsdelivr.net/graphiql/${version}/graphiql.css" rel="stylesheet" />
-        <script src="//cdn.jsdelivr.net/fetch/0.9.0/fetch.min.js"></script>
-        <script src="//cdn.jsdelivr.net/react/0.14.7/react.min.js"></script>
-        <script src="//cdn.jsdelivr.net/react/0.14.7/react-dom.min.js"></script>>
-        <script src="//cdn.jsdelivr.net/graphiql/${version}/graphiql.min.js"></script>
+        <style>
+           html, body {
+             height: 100%;
+             margin: 0;
+             width: 100%;
+             overflow: hidden;
+           }
+         </style>
+          <link href="//cdn.jsdelivr.net/graphiql/${version}/graphiql.css" rel="stylesheet" />
+          <script src="//cdn.jsdelivr.net/fetch/0.9.0/fetch.min.js"></script>
+          <script src="//cdn.jsdelivr.net/react/0.14.7/react.min.js"></script>
+          <script src="//cdn.jsdelivr.net/react/0.14.7/react-dom.min.js"></script>>
+          <script src="//cdn.jsdelivr.net/graphiql/${version}/graphiql.min.js"></script>
       </head>
       <body>
         Loading...
