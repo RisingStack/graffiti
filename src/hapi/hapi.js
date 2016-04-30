@@ -36,7 +36,7 @@ const plugin = {
         // ignore
       }
 
-      return graphql(schema, query, request, parsedVariables)
+      return graphql(schema, query, request, request, parsedVariables)
         .then((result) => {
           if (result.errors) {
             const message = result.errors.map((error) => error.message).join('\n');

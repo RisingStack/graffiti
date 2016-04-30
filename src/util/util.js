@@ -14,7 +14,7 @@ export function required() {
   throw new Error('Required option is missing');
 }
 
-const GRAPHIQL_VERSION = '0.6.0';
+const GRAPHIQL_VERSION = '0.7.1';
 
 export function renderGraphiQL({ query, variables, version = GRAPHIQL_VERSION } = {}) {
   return `

@@ -190,7 +190,7 @@ describe('graffiti express', () => {
           query: `mutation mutate($data: String!) {
             updateData(data: $data)
           }`,
-          variables: '{ "data": "123" }'
+          variables: JSON.stringify({ data: '123' })
         },
         accepts: (type) => type === 'json'
       };

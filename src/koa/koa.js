@@ -33,7 +33,7 @@ export default function middleware({ graphiql = true, schema = required() } = {}
         // ignore
       }
 
-      this.body = yield graphql(schema, query, this, parsedVariables);
+      this.body = yield graphql(schema, query, this, this, parsedVariables);
       return this.body;
     }
 
