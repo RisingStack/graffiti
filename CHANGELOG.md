@@ -1,9 +1,29 @@
+<a name="3.1.0"></a>
+# 3.1.0 (2016-07-26)
+
+
+### chore
+
+* chore(example): update dependencies ([39acdfb](https://github.com/RisingStack/graffiti/commit/39acdfb))
+* chore(package): update dependencies ([043e3a9](https://github.com/RisingStack/graffiti/commit/043e3a9))
+
+### docs
+
+* docs(package): update contributing.md, add issue, pull request templates ([b8704b9](https://github.com/RisingStack/graffiti/commit/b8704b9))
+
+### feat
+
+* feat(package): allow custom context ([0df66ae](https://github.com/RisingStack/graffiti/commit/0df66ae))
+
+
+
 <a name="3.0.4"></a>
 ## 3.0.4 (2016-04-30)
 
 
 ### chore
 
+* chore(package): bump version to 3.0.4 ([6062784](https://github.com/RisingStack/graffiti/commit/6062784))
 * chore(package): update dependencies ([4d20f70](https://github.com/RisingStack/graffiti/commit/4d20f70))
 
 
