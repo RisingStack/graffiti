@@ -38,7 +38,7 @@ export default function middleware({ graphiql = true, context = {}, schema = req
         // ignore
       }
 
-      return graphql(schema, query, context, request, parsedVariables)
+      return graphql(schema, query, { request }, context, parsedVariables)
         .then((result) => {
           if (result.errors) {
             const message = result.errors.map((error) => error.message).join('\n');
