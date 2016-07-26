@@ -1,3 +1,17 @@
+<a name="3.1.1"></a>
+## 3.1.1 (2016-07-26)
+
+
+### chore
+
+* chore(npmignore): don't ignore src ([3a9121f](https://github.com/RisingStack/graffiti/commit/3a9121f))
+
+### fix
+
+* fix(context): fix graphql parameter order ([d816272](https://github.com/RisingStack/graffiti/commit/d816272))
+
+
+
 <a name="3.1.0"></a>
 # 3.1.0 (2016-07-26)
 
@@ -5,6 +19,7 @@
 ### chore
 
 * chore(example): update dependencies ([39acdfb](https://github.com/RisingStack/graffiti/commit/39acdfb))
+* chore(package): bump version to 3.1.0 ([621fbe2](https://github.com/RisingStack/graffiti/commit/621fbe2))
 * chore(package): update dependencies ([043e3a9](https://github.com/RisingStack/graffiti/commit/043e3a9))
 
 ### docs
