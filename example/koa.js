@@ -13,8 +13,9 @@ app.use(graffiti.koa({
 
 // redirect all requests to /graphql
 // to open GraphiQL by default
-app.use(function *redirect() {
+app.use(function *redirect(next) {
   this.redirect('/graphql');
+  yield next;
 });
 
 app.listen(3002, (err) => {

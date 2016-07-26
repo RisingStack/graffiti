@@ -7,9 +7,10 @@ server.connection({ port: 3003 });
 
 // redirect all requests to /graphql
 // to open GraphiQL by default
-server.ext('onRequest', function redirect(request, reply) {
+server.ext('onRequest', (request, reply) => {
   if (request.path === '/graphql') {
-    return reply.continue();
+    reply.continue();
+    return;
   }
   reply.redirect('/graphql');
 });

@@ -7,14 +7,13 @@
   },
   "dependencies": {
     "@risingstack/graffiti": "../",
-    "@risingstack/graffiti-mongoose": "^5.0.10",
-    "babel-polyfill": "^6.7.4",
-    "body-parser": "^1.15.0",
-    "express": "^4.13.4",
-    "graphql": "^0.5.0",
-    "koa": "^1.2.0",
-    "koa-bodyparser": "^2.0.1",
-    "koa-static": "^2.0.0",
-    "mongoose": "^4.4.14"
+    "@risingstack/graffiti-mongoose": "^5.2.0",
+    "body-parser": "1.15.2",
+    "express": "4.14.0",
+    "graphql": "0.6.2",
+    "koa": "1.2.1",
+    "koa-bodyparser": "2.2.0",
+    "koa-static": "2.0.0",
+    "mongoose": "4.5.7"
   }
 }
