@@ -16,7 +16,7 @@ function sendError(response, boom) {
   response.status(statusCode).send(payload);
 }
 
-export default function middleware({ graphiql = true, schema = required() } = {}) {
+export default function middleware({ graphiql = true, context = {}, schema = required() } = {}) {
   return (request, response, next) => {
     if (isPath(request) && (isPost(request) || isGet(request))) {
       const body = request.body;
@@ -38,7 +38,7 @@ export default function middleware({ graphiql = true, schema = required() } = {}
         // ignore
       }
 
-      return graphql(schema, query, request, request, parsedVariables)
+      return graphql(schema, query, context, request, parsedVariables)
         .then((result) => {
           if (result.errors) {
             const message = result.errors.map((error) => error.message).join('\n');

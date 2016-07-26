@@ -1,7 +1,9 @@
 # ![graffiti](https://cloud.githubusercontent.com/assets/1764512/8900273/9ed758dc-343e-11e5-95ba-e82f876cf52d.png)
 
+[![npm version](https://badge.fury.io/js/%40risingstack%2Fgraffiti.svg)](https://badge.fury.io/js/%40risingstack%2Fgraffiti)
 [ ![Codeship Status for RisingStack/graffiti](https://codeship.com/projects/0c4fb010-5969-0133-8c37-4255fd5efb39/status?branch=master)](https://codeship.com/projects/110029)
 [![bitHound Overall Score](https://www.bithound.io/github/RisingStack/graffiti/badges/score.svg)](https://www.bithound.io/github/RisingStack/graffiti)
+[![Known Vulnerabilities](https://snyk.io/test/npm/@risingstack/graffiti/badge.svg)](https://snyk.io/test/npm/@risingstack/graffiti)
 
 Currently the consumption of HTTP REST APIs dominate the client-side world,
 [GraphQL](https://github.com/facebook/graphql) aims to change this.
@@ -26,7 +28,7 @@ For a running **example server** and **executable queries**, check out our examp
 ## Adapters
 
 * [mongoose](https://github.com/RisingStack/graffiti-mongoose)
-* more coming soon...
+* more coming...
 
 ## Supported servers
 
@@ -64,7 +66,8 @@ const app = express();
 app.use(json());
 
 app.use(graffiti.express({
-  schema: getSchema([User, Cat])
+  schema: getSchema([User, Cat]),
+  context: {} // custom context
 }));
 
 app.listen(3000);
@@ -83,7 +86,8 @@ server.connection({ port: 3000 });
 server.register({
   register: graffiti.hapi,
   options: {
-    schema: getSchema([User, Cat])
+    schema: getSchema([User, Cat]),
+    context: {} // custom context
   }
 }, function (err) {
   if (err) {
@@ -112,7 +116,8 @@ const app = koa();
 app.use(parser());
 
 app.use(graffiti.koa({
-  schema: getSchema([User, Cat])
+  schema: getSchema([User, Cat]),
+  context: {} // custom context
 }));
 
 app.listen(3000);
@@ -122,6 +127,7 @@ app.listen(3000);
 
 - `schema`: a `GraphQLSchema` instance. You can use an adapters `getSchema` method, or provide your own schema. (required)
 - `graphiql`: may present [GraphiQL](https://github.com/graphql/graphiql) when loaded directly from a browser. (default: `true`)
+- `context`: custom GraphQL context object. (default: `{}`)
 
 ## Test
 

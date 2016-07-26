@@ -16,7 +16,7 @@ function accepts({ headers }, type) {
 }
 
 const plugin = {
-  register: (server, { graphiql = true, schema = required() } = {}, next) => {
+  register: (server, { graphiql = true, context = {}, schema = required() } = {}, next) => {
     const handler = (request, reply) => {
       const data = request.payload || request.query || {};
       const { query, variables } = data;
@@ -36,7 +36,7 @@ const plugin = {
         // ignore
       }
 
-      return graphql(schema, query, request, request, parsedVariables)
+      return graphql(schema, query, context, request, parsedVariables)
         .then((result) => {
           if (result.errors) {
             const message = result.errors.map((error) => error.message).join('\n');
