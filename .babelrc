@@ -1,0 +1,15 @@
+{
+	"passPerPreset": true,
+	"presets": [{
+    "plugins": [
+      "transform-runtime",
+      "array-includes"
+    ]
+  }, {
+		"passPerPreset": false,
+		"presets": [
+      "es2015",
+      "stage-0"
+    ]
+	}]
+}

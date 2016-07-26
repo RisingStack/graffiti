@@ -1,27 +1,20 @@
-{
-  "extends": "airbnb/base",
-  "ecmaFeatures": {
-    "blockBindings": true,
-    "forOf": true,
-    "jsx": true
-  },
-  "env": {
-    "node": true
-  },
-  "globals": {
-    "before": false,
-    "after": false,
-    "beforeEach": false,
-    "afterEach": false,
-    "describe": false,
-    "it": false
-  },
-  "parser": "babel-eslint",
-  "rules": {
-    "no-shadow": 0,
-    "no-param-reassign": 0,
-    "id-length": [2, {"exceptions": ["_", "i"]}],
-    "comma-dangle": [1, "never"],
-    "max-len": [2, 120, 2]
-  }
-}
+---
+  parser: babel-eslint
+  extends: airbnb-base
+  env:
+    es6: true
+    node: true
+    mocha: true
+  rules:
+    generator-star-spacing: 0
+    no-shadow: 0
+    no-param-reassign: 0
+    comma-dangle: 0
+    object-curly-spacing: 0
+    no-underscore-dangle: 0
+    import/no-extraneous-dependencies: 0
+    no-prototype-builtins: 0
+    max-len:
+      - 2
+      - 120
+      - 2
