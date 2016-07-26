@@ -1,5 +1,4 @@
 coverage
 example
 .idea
-src
 *.spec.js
