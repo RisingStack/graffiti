@@ -1,3 +1,13 @@
+<a name="3.1.2"></a>
+## 3.1.2 (2016-09-15)
+
+
+### chore
+
+* chore(package): update dependencies ([c5f2a3f](https://github.com/RisingStack/graffiti/commit/c5f2a3f))
+
+
+
 <a name="3.1.1"></a>
 ## 3.1.1 (2016-07-26)
 
@@ -5,6 +15,7 @@
 ### chore
 
 * chore(npmignore): don't ignore src ([3a9121f](https://github.com/RisingStack/graffiti/commit/3a9121f))
+* chore(package): bump version to 3.1.1 ([ec55030](https://github.com/RisingStack/graffiti/commit/ec55030))
 
 ### fix
 
