@@ -87,7 +87,7 @@ server.register({
   register: graffiti.hapi,
   options: {
     schema: getSchema([User, Cat]),
-    context: {} // custom context
+    context: {}, // custom context 
     config: {} // config parameter for hapi graphql route
   }
 }, function (err) {
