@@ -16,7 +16,7 @@ function accepts({ headers }, type) {
 }
 
 const plugin = {
-  register: (server, { graphiql = true, context = {}, schema = required() } = {}, next) => {
+  register: (server, { graphiql = true, context = {}, config = {}, schema = required() } = {}, next) => {
     const handler = (request, reply) => {
       const data = request.payload || request.query || {};
       const { query, variables } = data;
@@ -54,6 +54,7 @@ const plugin = {
     server.route({
       method: 'POST',
       path: '/graphql',
+      config,
       handler
     });
 
@@ -61,6 +62,7 @@ const plugin = {
       server.route({
         method: 'GET',
         path: '/graphql',
+        config,
         handler
       });
     }
