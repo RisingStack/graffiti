@@ -1,9 +1,20 @@
+<a name="3.2.0"></a>
+# 3.2.0 (2016-09-19)
+
+
+### feat
+
+* feat(hapi): add ability to specify a config parameter for the GraphQL route ([f07a7a7](https://github.com/RisingStack/graffiti/commit/f07a7a7))
+
+
+
 <a name="3.1.2"></a>
 ## 3.1.2 (2016-09-15)
 
 
 ### chore
 
+* chore(package): bump version to 3.1.2 ([6c92d70](https://github.com/RisingStack/graffiti/commit/6c92d70))
 * chore(package): update dependencies ([c5f2a3f](https://github.com/RisingStack/graffiti/commit/c5f2a3f))
 
 
