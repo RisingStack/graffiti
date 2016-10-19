@@ -16,14 +16,18 @@ function sendError(response, boom) {
   response.status(statusCode).send(payload);
 }
 
-export default function middleware({ graphiql = true, context = {}, schema = required() } = {}) {
+export default function middleware({ graphiql = true, context = {}, schema = required(), getCSRFToken = null } = {}) {
   return (request, response, next) => {
     if (isPath(request) && (isPost(request) || isGet(request))) {
       const body = request.body;
       const { query, variables } = Object.assign({}, body, request.query);
 
       if (isGet(request) && request.accepts('html') && graphiql) {
-        return response.send(renderGraphiQL({ query, variables }));
+        const renderOptions = { query, variables };
+        if (getCSRFToken !== null) {
+          renderOptions.csrfToken = getCSRFToken(request);
+        }
+        return response.send(renderGraphiQL(renderOptions));
       }
 
       if (isGet(request) && query && query.includes('mutation')) {
