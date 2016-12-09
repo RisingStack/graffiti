@@ -1,6 +1,20 @@
+<a name="3.3.0"></a>
+# 3.3.0 (2016-12-09)
+
+
+### feat
+
+* feat(util): use relative url instead of hardcoded (#40) ([dadc357](https://github.com/RisingStack/graffiti/commit/dadc357))
+
+
+
 <a name="3.2.0"></a>
 # 3.2.0 (2016-09-19)
 
+
+### chore
+
+* chore(package): bump version to 3.2.0 ([ee928af](https://github.com/RisingStack/graffiti/commit/ee928af))
 
 ### feat
 
