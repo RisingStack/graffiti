@@ -1,3 +1,5 @@
+# &#9888; Notice: the development of the package is discontinued. Use it for educational purposes and hobby projects only.
+
 # ![graffiti](https://cloud.githubusercontent.com/assets/1764512/8900273/9ed758dc-343e-11e5-95ba-e82f876cf52d.png)
 
 [![npm version](https://badge.fury.io/js/%40risingstack%2Fgraffiti.svg)](https://badge.fury.io/js/%40risingstack%2Fgraffiti)
