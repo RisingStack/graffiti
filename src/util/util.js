@@ -16,7 +16,8 @@ export function required() {
 
 const GRAPHIQL_VERSION = '0.7.1';
 
-export function renderGraphiQL({ query, variables, version = GRAPHIQL_VERSION } = {}) {
+export function renderGraphiQL({ query, variables, version = GRAPHIQL_VERSION, csrfToken } = {}) {
+  csrfToken = csrfToken ? `,'x-csrf-token': '${csrfToken}'` : '';
   return `
     <!DOCTYPE html>
     <html>
@@ -89,7 +90,8 @@ export function renderGraphiQL({ query, variables, version = GRAPHIQL_VERSION } 
               method: 'post',
               headers: {
                 'Accept': 'application/json',
-                'Content-Type': 'application/json',
+                'Content-Type': 'application/json'
+                ${csrfToken}
               },
               body: JSON.stringify(graphQLParams),
               credentials: 'include',
