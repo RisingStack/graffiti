@@ -29,7 +29,11 @@
   "homepage": "https://github.com/RisingStack/graffiti#readme",
   "dependencies": {
     "babel-runtime": "6.11.6",
-    "boom": "4.0.0"
+    "boom": "4.0.0",
+    "express": "4.14.0",
+    "graphql": "0.7.0",
+    "hapi": "15.0.3",
+    "koa": "2.0.0-alpha.2"
   },
   "devDependencies": {
     "babel": "6.5.2",
@@ -46,10 +50,6 @@
     "eslint-config-airbnb-base": "7.1.0",
     "eslint-plugin-import": "1.15.0",
     "eslint-plugin-react": "6.2.2",
-    "express": "4.14.0",
-    "graphql": "0.7.0",
-    "hapi": "15.0.3",
-    "koa": "2.0.0-alpha.2",
     "mocha": "3.0.2",
     "pre-commit": "1.1.3",
     "sinon": "1.17.5",
